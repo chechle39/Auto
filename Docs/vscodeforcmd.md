@@ -95,3 +95,7 @@ Reference project => PS C:\Users\Window\Desktop\Auto\Auto> dotnet add .\Auto.Api
 
 
 Run => `dotnet run --project .\Auto.Api\`
+
+How to add user-secrets => `dotnet user-secrets init --project .\Auto.Api\` 
+Add key => `dotnet user-secrets set --project .\Auto.Api\ "JwtSettings:Secret" "super-secret-key"`
+Check value => `dotnet user-secrets list --project .\Auto.Api\`
