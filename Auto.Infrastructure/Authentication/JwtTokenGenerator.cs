@@ -24,6 +24,7 @@ public class JwtTokenGenerator : IJwtTokenGenerator
                 Encoding.UTF8.GetBytes(_jwtSettings.Secret)
             ), SecurityAlgorithms.HmacSha256
         );
+        
         var claims = new[]
         {
             new Claim(JwtRegisteredClaimNames.Sub, userId.ToString()),
