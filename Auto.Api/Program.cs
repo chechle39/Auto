@@ -1,3 +1,4 @@
+using Auto.Api.Middleware;
 using Auto.Application;
 using Auto.Application.Services.Authentication;
 using Auto.Infrastructure;
@@ -17,6 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 var app = builder.Build();
 {
+    app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseHttpsRedirection();
 
     // app.UseAuthorization();
