@@ -1,9 +1,8 @@
+using Auto.Domain.Entities;
+
 namespace Auto.Application.Services.Authentication;
 
 public record AuthenticationResult(
-    Guid Id,
-    string FirstName,
-    string LastName,
-    string Email,
+    User user,
     string Token
 );
