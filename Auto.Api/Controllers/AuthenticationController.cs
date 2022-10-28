@@ -1,3 +1,4 @@
+using Auto.Api.Fillters;
 using Auto.Application.Services.Authentication;
 using Auto.Contracts.Authentication;
 using Microsoft.AspNetCore.Mvc;
