@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- <ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Auto.Domain\Auto.Domain.csproj" />
-  </ItemGroup> -->
+  </ItemGroup>
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
