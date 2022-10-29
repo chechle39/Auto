@@ -1,3 +1,4 @@
+using Auto.Application.Common.Errors;
 using Auto.Application.Common.Interfaces.Authentication;
 using Auto.Application.Common.Interfaces.Persistence;
 using Auto.Domain.Entities;
@@ -17,7 +18,8 @@ public class AuthenticationService : IAuthenticationService
         // 1. Validate the User does not exist
         if (_userRepository.GetUserByEmail(email) is not null)
         {
-            throw new Exception("User with given email already exist");
+            //throw new Exception("User with given email already exist");
+            throw new DuplicateEmailException();
         }
         // 2. Create User (generate unique Id) & Persist to DB
         var user = new User
