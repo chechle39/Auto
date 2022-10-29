@@ -3,8 +3,10 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using System.Diagnostics;
+using Auto.InternalLib;
+using Auto.Api.Http;
 
-namespace Auto.Api.Errors
+namespace Auto.Api.Common.Errors
 {
     public class AutoProblemDetailFactory : ProblemDetailsFactory
     {
@@ -89,8 +91,12 @@ namespace Auto.Api.Errors
             {
                 problemDetails.Extensions["traceId"] = traceId;
             }
+            var errors = httpContext?.Items[HttpContextItemKeys.Errors] as List<Error>;
 
-            problemDetails.Extensions.Add("customProperty", "customValue");
+            if (errors is not null)
+            {
+                problemDetails.Extensions.Add("errorCodes", errors.Select(e => e.Code));
+            }
         }
     }
 }

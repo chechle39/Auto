@@ -1,4 +1,4 @@
-using Auto.Api.Errors;
+using Auto.Api.Common.Errors;
 using Auto.Api.Fillters;
 using Auto.Api.Middleware;
 using Auto.Application;
@@ -25,11 +25,11 @@ var app = builder.Build();
 {
     //app.UseMiddleware<ErrorHandlingMiddleware>();
     app.UseExceptionHandler("/error");
-    app.Map("/error", (HttpContext httpContext) =>
-    {
-        Exception? exception = httpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
-        return Results.Problem();
-    });
+    // app.Map("/error", (HttpContext httpContext) =>
+    // {
+    //     Exception? exception = httpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
+    //     return Results.Problem();
+    // });
     app.UseHttpsRedirection();
 
     // app.UseAuthorization();

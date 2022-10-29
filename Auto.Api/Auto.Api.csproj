@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Auto.Contracts\Auto.Contracts.csproj" />
     <ProjectReference Include="..\Auto.Application\Auto.Application.csproj" />
+    <ProjectReference Include="..\Auto.Domain\Auto.Domain.csproj" />
     <ProjectReference Include="..\Auto.Infrastructure\Auto.Infrastructure.csproj" />
   </ItemGroup>
 
