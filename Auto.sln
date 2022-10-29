@@ -1,25 +1,24 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.Api", "Auto.Api\Auto.Api.csproj", "{11C12FAA-6C59-439B-A9D9-640039690BA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auto.Api", "Auto.Api\Auto.Api.csproj", "{11C12FAA-6C59-439B-A9D9-640039690BA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.Application", "Auto.Application\Auto.Application.csproj", "{0AE1F89D-4E63-4ABD-A70B-DFE31B5FF7DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auto.Application", "Auto.Application\Auto.Application.csproj", "{0AE1F89D-4E63-4ABD-A70B-DFE31B5FF7DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.Contracts", "Auto.Contracts\Auto.Contracts.csproj", "{91CB9B17-ED33-460E-AB15-64F3872AFEE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auto.Contracts", "Auto.Contracts\Auto.Contracts.csproj", "{91CB9B17-ED33-460E-AB15-64F3872AFEE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.Domain", "Auto.Domain\Auto.Domain.csproj", "{E3E7C8D3-EF60-4B9C-836C-F0DC955EA7ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auto.Domain", "Auto.Domain\Auto.Domain.csproj", "{E3E7C8D3-EF60-4B9C-836C-F0DC955EA7ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.Infrastructure", "Auto.Infrastructure\Auto.Infrastructure.csproj", "{E6D9EBDE-0BD9-4511-B4EA-558A20A210C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auto.Infrastructure", "Auto.Infrastructure\Auto.Infrastructure.csproj", "{E6D9EBDE-0BD9-4511-B4EA-558A20A210C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto.InternalLib", "Auto.InternalLib\Auto.InternalLib.csproj", "{1895A673-8CF9-41F0-A0DD-0C462DDAE1C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{11C12FAA-6C59-439B-A9D9-640039690BA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -42,5 +41,15 @@ Global
 		{E6D9EBDE-0BD9-4511-B4EA-558A20A210C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6D9EBDE-0BD9-4511-B4EA-558A20A210C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6D9EBDE-0BD9-4511-B4EA-558A20A210C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1895A673-8CF9-41F0-A0DD-0C462DDAE1C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1895A673-8CF9-41F0-A0DD-0C462DDAE1C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1895A673-8CF9-41F0-A0DD-0C462DDAE1C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1895A673-8CF9-41F0-A0DD-0C462DDAE1C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CB1F5E6-256D-4A99-96D5-63F173ADD050}
 	EndGlobalSection
 EndGlobal

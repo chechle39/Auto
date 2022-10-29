@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Auto.InternalLib\Auto.InternalLib.csproj" />
-  </ItemGroup>
-
 </Project>

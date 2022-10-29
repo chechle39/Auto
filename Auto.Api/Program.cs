@@ -1,4 +1,4 @@
-using Auto.Api.Errors;
+using Auto.Api.Common.Errors;
 using Auto.Api.Fillters;
 using Auto.Api.Middleware;
 using Auto.Application;
