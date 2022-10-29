@@ -12,7 +12,7 @@ namespace Auto.Api.Controllers
             Exception? exeption = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
             var (statusCode, message) = exeption switch
             {
-                DuplicateEmailException => (StatusCodes.Status409Conflict, "Email already exist"),
+                IServiceException serviceException => ((int)serviceException.StatusCode, serviceException.ErrorMessage),
                 _ => (StatusCodes.Status500InternalServerError, "An exception error occured")
             };
             return Problem(statusCode: statusCode, title: message);
