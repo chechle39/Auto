@@ -5,7 +5,6 @@ using Auto.Application.Services.Authentication.Common;
 using Auto.Domain.Common.Errors;
 using Auto.Domain.Entities;
 using Auto.InternalLib;
-
 namespace Auto.Application.Services.Authentication.Queries;
 public class AuthenticationQueryService : IAuthenticationQueryService
 {

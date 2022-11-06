@@ -3,26 +3,26 @@ using Auto.Contracts.Authentication;
 using Auto.InternalLib;
 using Microsoft.AspNetCore.Mvc;
 using Auto.Domain.Common.Errors;
-using Auto.Application.Services.Authentication.Commands;
-using Auto.Application.Services.Authentication.Common;
-using Auto.Application.Services.Authentication.Queries;
+using MediatR;
+using Auto.Application.Authentication.Commands.Register;
+using Auto.Application.Authentication.Common;
+using Auto.Application.Authentication.Queries.Login;
 
 namespace Auto.Api.Controllers;
 [Route("auth")]
 public class AuthenticationController : ApiController
 {
-    private readonly IAuthenticationCommandService _authenticationCommandService;
-    private readonly IAuthenticationQueryService _authenticationQueryService;
+    private readonly ISender _mediator;
 
-    public AuthenticationController(IAuthenticationCommandService authenticationCommandService, IAuthenticationQueryService authenticationQueryService) 
+    public AuthenticationController(ISender mediator) 
     {
-        _authenticationCommandService = authenticationCommandService;
-        _authenticationQueryService = authenticationQueryService;
+        _mediator = mediator;
     }
     [HttpPost("register")]
-    public IActionResult Register(RegisterRequest request)
+    public async Task<IActionResult> Register(RegisterRequest request)
     {
-        ErrorOrNot<AuthenticationResult> authResult = _authenticationCommandService.Register(request.FirstName, request.LastName, request.Email, request.Password);
+        var command = new RegisterCommand(request.FirstName, request.LastName, request.Email, request.Password);
+        ErrorOrNot<AuthenticationResult> authResult = await _mediator.Send(command);
    
         return authResult.Match(
           authResult => Ok(MapAuthResult(authResult)),
@@ -31,9 +31,10 @@ public class AuthenticationController : ApiController
     }
 
     [HttpPost("login")]
-    public IActionResult Login(LoginRequest request)
+    public async Task<IActionResult> Login(LoginRequest request)
     {
-        var authResult = _authenticationQueryService.Login(request.Email, request.Password);
+        var query = new LoginQuery(request.Email, request.Password);
+        var authResult = await _mediator.Send(query);
         if (authResult.IsError && authResult.FirstError == Errors.AuthenticationError.InvalidCredentials)
         {
             return Problem(statusCode: StatusCodes.Status401Unauthorized, title: authResult.FirstError.Description);
