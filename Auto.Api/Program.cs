@@ -1,3 +1,4 @@
+using Auto.Api;
 using Auto.Api.Common.Errors;
 using Auto.Api.Fillters;
 using Auto.Api.Middleware;
@@ -9,10 +10,11 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 {
-    builder.Services.AddApplication();
-    builder.Services.AddInfrastructure(builder.Configuration);
-    builder.Services.AddControllers();
-    builder.Services.AddSingleton<ProblemDetailsFactory, AutoProblemDetailFactory>();
+    builder.Services
+        .AddPresentation()
+        .AddApplication()
+        .AddInfrastructure(builder.Configuration);
+ 
     //builder.Services.AddControllers(options => options.Filters.Add<ErrorHandlingFilterAttribte>());
 }
 // Add services to the container.

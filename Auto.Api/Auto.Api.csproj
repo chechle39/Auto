@@ -7,6 +7,11 @@
     <UserSecretsId>3309854a-9e37-4bab-9288-716a3e4d3e84</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.3.0" />
+    <PackageReference Include="Mapster.DependencyInjection" Version="1.0.0" />
+  </ItemGroup>
+
   <!-- <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup> -->
@@ -14,7 +19,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Auto.Contracts\Auto.Contracts.csproj" />
     <ProjectReference Include="..\Auto.Application\Auto.Application.csproj" />
-    <ProjectReference Include="..\Auto.Domain\Auto.Domain.csproj" />
     <ProjectReference Include="..\Auto.Infrastructure\Auto.Infrastructure.csproj" />
   </ItemGroup>
 
